@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PRORED - FEDPAZCO | Red de Profesionales y Emprendimiento del Pacífico</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F19;
+            --surface-card: #151D2A;
+            --surface-hover: #1E293B;
+            --fedpazco-red: #E52E2E;
+            --fedpazco-blue: #1E88B5;
+            --fedpazco-green: #7BC043;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+
+            /* Colores Oficiales de Marcas */
+            --brand-whatsapp: #25D366;
+            --brand-facebook: #1877F2;
+            --brand-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --brand-phone: #1E88B5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 430px;
+            background: var(--surface-card);
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(30, 136, 181, 0.15);
+            overflow: hidden;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        /* Logo SVG Contenedor */
+        .logo-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--fedpazco-red);
+            box-shadow: 0 0 15px rgba(229, 46, 46, 0.3);
+        }
+
+        .logo-container svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .brand-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .brand-subtitle {
+            font-size: 13px;
+            color: var(--fedpazco-blue);
+            font-weight: 600;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .brand-tagline {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(30, 136, 181, 0.12);
+            border: 1px solid rgba(30, 136, 181, 0.3);
+            color: #38BDF8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        /* Botones Principales de Acción con Marca Oficial */
+        .action-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn-official {
+            width: 100%;
+            padding: 13px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--brand-whatsapp);
+        }
+        .btn-whatsapp:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-phone {
+            background-color: var(--brand-phone);
+        }
+        .btn-phone:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        /* Pestañas Interactivas / Secciones */
+        .section-header {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 6px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            margin-bottom: 22px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--fedpazco-green);
+            border-radius: 10px;
+            padding: 12px;
+        }
+
+        .feature-card h4 {
+            font-size: 13px;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .feature-card p {
+            font-size: 11.5px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Redes Sociales Oficiales */
+        .social-title {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        .social-instagram {
+            background: var(--brand-instagram);
+        }
+
+        .social-facebook {
+            background-color: var(--brand-facebook);
+        }
+
+        .social-web {
+            background-color: var(--fedpazco-red);
+        }
+
+        /* Créditos Discretos Obligatorios */
+        .konfio-footer {
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 10px;
+            color: rgba(148, 163, 184, 0.5);
+            letter-spacing: 0.3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        
+        <!-- Logo FEDPAZCO Reconstruido en SVG Vectorial -->
+        <div class="logo-container">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Marco Rojo con Destellos -->
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#E52E2E" stroke-width="7" />
+                <path d="M 175 60 C 190 90, 185 140, 155 170" fill="none" stroke="#E52E2E" stroke-width="4" stroke-dasharray="3 3"/>
+                <!-- Texto Arc FEDPAZCO -->
+                <path id="text-path" d="M 40,90 A 65,65 0 0,1 160,90" fill="none" />
+                <text font-family="Poppins, sans-serif" font-weight="800" font-size="22" fill="#1E88B5" text-anchor="middle">
+                    <textPath href="#text-path" startOffset="50%">FEDPAZCO</textPath>
+                </text>
+                <!-- Paloma Azul de la Paz -->
+                <path d="M 70 85 C 65 75, 80 70, 90 75 C 95 72, 100 80, 92 85 C 85 88, 75 90, 70 85 Z" fill="none" stroke="#1E88B5" stroke-width="2.5"/>
+                <!-- Figura Emprendedor Verde -->
+                <circle cx="130" cy="72" r="8" fill="#7BC043"/>
+                <path d="M 120 100 L 130 84 L 140 76 M 130 84 L 122 108 M 130 84 L 138 108" stroke="#7BC043" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <!-- Flecha de Crecimiento -->
+                <path d="M 65 135 L 110 115 L 150 90" fill="none" stroke="#333333" stroke-width="5" stroke-linecap="round"/>
+                <polyline points="140,90 150,90 150,100" fill="none" stroke="#333333" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <!-- Títulos del Negocio -->
+        <h1 class="brand-title">PRORED</h1>
+        <div class="brand-subtitle">Ecosistema Profesional</div>
+        <p class="brand-tagline">Programa de la Fundación FEDPAZCO • Emprendimiento, Desarrollo y Paz del Pacífico Colombiano</p>
+
+        <div class="location-badge">
+            <i class="fa-solid fa-location-dot"></i> Chocó, Colombia
+        </div>
+
+        <!-- Botones de Acción Principal (Colores y Estilo de Marcas Oficiales) -->
+        <div class="action-grid">
+            <a href="https://wa.me/573108172929?text=Hola%20PRORED,%20me%20interesa%20obtener%20informaci%C3%B3n%20sobre%20la%20red%20de%20profesionales." class="btn-official btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-lg"></i> Contactar por WhatsApp
+            </a>
+            <a href="tel:+573108172929" class="btn-official btn-phone">
+                <i class="fa-solid fa-phone"></i> Llamar Directamente
+            </a>
+        </div>
+
+        <!-- Servicios / Articulación -->
+        <div class="section-header">Articulación e Impacto</div>
+
+        <div class="features-list">
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-user-tie" style="color:var(--fedpazco-blue);"></i> Red de Profesionales</h4>
+                <p>Conexión e integración de expertos de diversas disciplinas en el Pacífico.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-graduation-cap" style="color:var(--fedpazco-green);"></i> Docentes Pensionados</h4>
+                <p>Aprovechamiento de la experiencia y conocimiento de educadores para el desarrollo social.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4><i class="fa-solid fa-handshake" style="color:var(--fedpazco-red);"></i> Aliados y Emprendimientos</h4>
+                <p>Vinculación de empresas, instituciones y negocios para potenciar el ecosistema económico.</p>
+            </div>
+        </div>
+
+        <!-- Redes Sociales Oficiales -->
+        <div class="social-title">Síguenos en Redes Sociales</div>
+        <div class="social-grid">
+            <a href="https://instagram.com/fedpazco" class="social-btn social-instagram" target="_blank" title="Instagram @fedpazco">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/fedpazco" class="social-btn social-facebook" target="_blank" title="Facebook @fedpazco">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/573108172929" class="social-btn social-web" target="_blank" title="Contacto FEDPAZCO">
+                <i class="fa-solid fa-globe"></i>
+            </a>
+        </div>
+
+        <!-- Crédito Discreto Obligatorio -->
+        <div class="konfio-footer">
+            Desarrollado por Konfío Zinc @ Todos los Derechos Reservados
+        </div>
+
+    </div>
+
+</body>
+</html>
