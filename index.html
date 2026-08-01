@@ -8,6 +8,8 @@
 
     <!-- Script de QR dinámico autónomo -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- FontAwesome para iconos oficiales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -25,7 +27,7 @@
 
             --brand-whatsapp: #25D366;
             --brand-facebook: #1877F2;
-            --brand-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --brand-instagram: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             --brand-phone: #1E88B5;
         }
 
@@ -34,6 +36,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            user-select: none;
         }
 
         body {
@@ -43,47 +46,42 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 10px;
+            padding: 8px;
         }
 
-        /* Chasis Fijo Móvil optimizado */
+        /* Chasis Fijo Móvil optimizado con Scroll Suave Interno */
         .card-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
             height: 100vh;
             max-height: 780px;
             background: var(--surface-card);
-            border-radius: 24px;
+            border-radius: 28px;
             border: 1px solid var(--border-subtle);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(30, 136, 181, 0.15);
             overflow: hidden;
-            padding: 20px 16px;
-            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         .scroll-content {
             flex-grow: 1;
             overflow-y: auto;
-            padding-right: 2px;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
-        /* Scrollbar discreto */
-        .scroll-content::-webkit-scrollbar {
-            width: 4px;
-        }
-        .scroll-content::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.15);
-            border-radius: 4px;
-        }
+        .scroll-content::-webkit-scrollbar { width: 4px; }
+        .scroll-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
 
         /* Logo SVG Contenedor */
         .logo-container {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 12px;
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 10px;
             background: #FFFFFF;
             border-radius: 50%;
             padding: 6px;
@@ -101,14 +99,14 @@
         }
 
         .brand-title {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: 0.5px;
         }
 
         .brand-subtitle {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--fedpazco-blue);
             font-weight: 600;
             margin-top: 2px;
@@ -116,11 +114,12 @@
         }
 
         .brand-tagline {
-            font-size: 10.5px;
+            font-size: 10px;
             color: var(--text-secondary);
             margin-top: 4px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             line-height: 1.3;
+            max-width: 320px;
         }
 
         .location-badge {
@@ -132,17 +131,18 @@
             color: #38BDF8;
             padding: 3px 10px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 500;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         /* Botones Principales de Acción */
         .action-grid {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 18px;
+            gap: 8px;
+            width: 100%;
+            margin-bottom: 14px;
         }
 
         .btn-official {
@@ -151,7 +151,7 @@
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12.5px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -177,13 +177,14 @@
 
         /* Pestañas Interactivas / Secciones */
         .section-header {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: left;
-            margin-bottom: 10px;
+            width: 100%;
+            margin-bottom: 8px;
             border-bottom: 1px solid var(--border-subtle);
             padding-bottom: 4px;
         }
@@ -193,7 +194,8 @@
             flex-direction: column;
             gap: 8px;
             text-align: left;
-            margin-bottom: 16px;
+            width: 100%;
+            margin-bottom: 14px;
         }
 
         .feature-card {
@@ -201,22 +203,22 @@
             border: 1px solid var(--border-subtle);
             border-left: 4px solid var(--fedpazco-green);
             border-radius: 10px;
-            padding: 10px 12px;
+            padding: 8px 10px;
         }
 
         .feature-card h4 {
-            font-size: 12px;
+            font-size: 11.5px;
             color: var(--text-primary);
             margin-bottom: 2px;
         }
 
         .feature-card p {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-secondary);
             line-height: 1.35;
         }
 
-        /* Redes Sociales Oficiales */
+        /* Redes Sociales Oficiales con Colores y Formas Corregidas */
         .social-title {
             font-size: 11px;
             color: var(--text-secondary);
@@ -226,19 +228,19 @@
         .social-grid {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 15px;
+            gap: 14px;
+            margin-bottom: 10px;
         }
 
         .social-btn {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
-            font-size: 16px;
+            font-size: 18px;
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -249,20 +251,19 @@
         .social-facebook { background-color: var(--brand-facebook); }
         .social-web { background-color: var(--fedpazco-red); }
 
-        /* Footer y Créditos Konfío Zinc obligatorios */
-        .footer-container {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            flex-shrink: 0;
-        }
-
+        /* Footer y Créditos Konfío Zinc Obligatorios Fijos */
         .konfio-footer {
-            font-size: 9px;
-            color: rgba(148, 163, 184, 0.7);
-            letter-spacing: 0.3px;
+            background: var(--bg-dark);
+            font-size: 8px;
+            color: rgba(148, 163, 184, 0.8);
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             font-weight: 700;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid var(--border-subtle);
+            flex-shrink: 0;
+            width: 100%;
         }
 
         /* Modales */
@@ -283,8 +284,8 @@
             border: 1px solid var(--fedpazco-blue);
             border-radius: 20px;
             width: 100%;
-            max-width: 340px;
-            padding: 20px;
+            max-width: 320px;
+            padding: 16px;
             text-align: center;
             color: var(--text-primary);
             box-shadow: 0 20px 40px rgba(0,0,0,0.8);
@@ -293,16 +294,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--fedpazco-blue);
         }
         .modal-close {
             background: none;
             border: none;
             color: var(--text-secondary);
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
         }
 
@@ -315,7 +316,7 @@
             color: #fff;
             padding: 6px 16px;
             border-radius: 999px;
-            font-size: 12px;
+            font-size: 11px;
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s ease;
@@ -406,11 +407,9 @@
             </div>
         </div>
 
-        <!-- Crédito Discreto Obligatorio y Marca -->
-        <div class="footer-container">
-            <div class="konfio-footer">
-                Creado por KONFÍO ZINC — Todos los Derechos Reservados
-            </div>
+        <!-- Crédito Konfío Zinc Obligatorio Fijo y Visible -->
+        <div class="konfio-footer">
+            Creado por KONFÍO ZINC — Todos los Derechos Reservados[cite: 2]
         </div>
 
     </div>
@@ -422,8 +421,8 @@
                 <span>Código QR de Acceso</span>
                 <button class="modal-close" id="close-qr">✕</button>
             </div>
-            <div id="qrcode" style="display:flex; justify-content:center; background:#fff; padding:12px; border-radius:12px; width:fit-content; margin: 0 auto;"></div>
-            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 12px;">Escanea este código para compartir la tarjeta digital de PRORED.</p>
+            <div id="qrcode" style="display:flex; justify-content:center; background:#fff; padding:10px; border-radius:12px; width:fit-content; margin: 0 auto;"></div>
+            <p style="font-size: 10px; color: var(--text-secondary); margin-top: 10px;">Escanea este código para compartir la tarjeta digital de PRORED.</p>
         </div>
     </div>
 
@@ -435,8 +434,8 @@
             if(qrBox) {
                 new QRCode(qrBox, {
                     text: window.location.href,
-                    width: 140,
-                    height: 140,
+                    width: 130,
+                    height: 130,
                     colorDark : "#0B0F19",
                     colorLight : "#ffffff"
                 });
