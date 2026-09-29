@@ -1,0 +1,16 @@
+{
+  "name": "PRORED - FEDPAZCO",
+  "short_name": "PRORED",
+  "description": "Red de profesionales y emprendimiento del Pacífico. Programa de la Fundación FEDPAZCO.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#E52E2E",
+  "theme_color": "#E52E2E",
+  "lang": "es",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/apple-touch-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}
