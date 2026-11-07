@@ -1,6 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#050B14"/>
-  <g transform="translate(8,8) scale(1)">
-    <path d="M8 7h10v13L32 7h8L25 23l16 18H28L18 29v12H8z" fill="#00E5FF"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="PRORED - FEDPAZCO">
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAABAAAAAQBPJcTWAAADA0lEQVR4nOWZTWsTQRjHf7N5dtNNCdqighdR9GB7aA9ei148+AVy8O5Vv4EXD6IViqIXj94sXirag+AnsPoFNOAL1KrFalKTbV52R2aioDZiBdckfX4wLGQzQ+afmef5PzNmdWbGohhBOYJyBOUIyhGUIyhHUI6gHEE5gnIE5QjKEZQjKEdQjqAcyW1ka7Gtln/+EeNaAEGAKRT8c7QFsBZTLDJ26hREIfxJg26XrF4nXV8ne/eObLMOQcGPMZoCpClBuczEtWuYsbEdd3MrJl1bo7WyQnNpifazpxgJwa2KkRLAuEVgse32Xwng/nE5fNi38UqF5r171ObnyZpNjIi+IFiqVCgcPMjH8+f9NskjNghDTnFujvK5c9RvXMfEpdEXwCYJtatXyD59xkQRplwmnJoiPn2aYGKib5/xs2dpLC6SbWz883gg/Gdst8PW48d036719rVLkzZj8/YRJhcWiGZmtvUJJieJTpwgWV7GxPGobwGDKY4RuIn8ENjS16/4fOkSB+7e/enz74THj5M8fLh7Y4CJS3RfPKdTrfrJ/kph/36sMd4z7UoBcDPr9AxR39c5eQFhWHBuMQwJ9uzp+zqt1TA7sdWjKoBNEsLZWcJjR/u+71arvVWyGwSwrRbZ1lYvC2QZNsuQQ4fYe/EiFKSvOK0nTyCMRl8AI0Lx5EnCjQ1MGHofEE1PE585Q7BvX98+zQcP6L58+Ve2engFiGMmLl/e8ffTN2/YvHVTZy2Qrq7y8cIF0g8fvHdQJUDy6JG3zOnq21yW/tAJYNtt0vfvabuzgPv3e0HPGZ8cJz/wYsgXNp0OWaNBtr5O6k6DarXe0VgUeQHyRhh0MeQm6dq388B/XeyMTDE0KATlCMoRlCMoR1CO5DKqdZnN9E1pQSn2ac9V9vln+UEJEARkScKXO3cISiV/6OkxgTdC/qLjP97/DUQA22hQn5/ffjn63d7uagEcv9kCw4agHEE5gnIE5QjKEZQjKEdQjqAcQTmCcgTlCMoRlCMoRwb9AwbNVxHm9fM8VKZrAAAAAElFTkSuQmCC" x="0" y="0" width="64" height="64"/>
 </svg>
